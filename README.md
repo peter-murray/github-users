@@ -12,13 +12,20 @@ the adhoc of the purpose of this utility.
     $ npm install
     ```
     
-1. Update `index.js` to include the GitHub token and Organization Name that you want to generate the output for.
-
-1. Run the index.js file using
+1. Run the script using:
     ```
-    $ node index.js
+    $ npm run user-export -- -t <GITHUB_TOKEN> -o <ORGANIZATION_NAME>
     ```
    
+   Alternatively you could gloablly install the application using `npm install -g` which would give you a command line tool named `github-users`
+   
+The script will be slow as it will use the local filesystem to store information about how far through the users for the
+organization it so it can pick up where it left off if you get an error due to rate limiting etc...
+   
+If you need to reset the state pass the `--reset` flag in to the program and it will clear the local caches to ensure
+it will process the users from scratch.
+   
+ 
 ## Interpreting Results
 The csv file will be generated in the root directory of the project (along side the `index.js` file).
 

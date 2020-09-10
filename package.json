@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "user-export": "./bin/index.js"
+  },
+  "bin": {
+    "github-users": "./bin/index.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@actions/github": "^4.0.0",
+    "commander": "^6.1.0",
     "json2csv": "^5.0.1"
   }
 }
